@@ -15,7 +15,6 @@ services:
 
   web:
     build: .
-    command: uvicorn server.app.main:app --port 9000
     volumes:
       - .:/server
     expose:

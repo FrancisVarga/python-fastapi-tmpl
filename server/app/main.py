@@ -111,3 +111,7 @@ def delete_book(request: Request, book_id: int, db: Session = Depends(get_db)):
     return templates.TemplateResponse(
         "delete_book.html", {"request": request, "book": book}
     )
+    
+# start uvicorn server within this script
+if __name__ == "__main__":
+    uvicorn.run("main:app", port=9000, log_level="info")
