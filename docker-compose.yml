@@ -15,6 +15,7 @@ services:
 
   web:
     build: .
+    command: python server/app/main.py
     volumes:
       - .:/server
     expose:
