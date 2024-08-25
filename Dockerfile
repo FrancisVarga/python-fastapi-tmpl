@@ -33,3 +33,6 @@ COPY . /server/
 
 # Expose the port the app runs in
 EXPOSE 9000
+
+# Define the command to start the container
+# CMD uvicorn server.app.main:app --port 9000
