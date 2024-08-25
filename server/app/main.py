@@ -55,6 +55,13 @@ def create_book_api(
     return RedirectResponse(url="/books", status_code=303)
 
 
+# add health check api
+@app.get("/health")
+def health():
+    return {
+        "status": "ok"
+    }
+
 @app.get("/books")
 def list_books(request: Request, db: Session = Depends(get_db)):
     books = db.query(Book).all()
